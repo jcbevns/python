@@ -8,7 +8,6 @@ import sys
 emailAddress = 'jevans@oculyze.de'
 
 qr = qrcode.QRCode(
-	#version=1,
 	error_correction=qrcode.constants.ERROR_CORRECT_L,
 	box_size=10,
 	border=4,)
@@ -67,7 +66,6 @@ listOfItems = ['Bellows',
 
 sortedList = sorted(listOfItems)
 
-
 #iterate through list of items and create links
 listOfLinks = []
 
@@ -78,7 +76,7 @@ for item in listOfItems:
 
 
 
-#insert URLS to make codes #
+#insert URLS to make codes and save as listOfitem #
 for links in listOfLinks:
 		img = qrcode.make(links)
 		#Delete all mush from "links" to get usable filename for code

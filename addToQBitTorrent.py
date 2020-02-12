@@ -63,6 +63,7 @@ parser.add_argument("magnet",help="magnet link")
 args = parser.parse_args()
 
 savePath = driver.find_element_by_name('savepath')
+savePath.clear()
 moviePath = "www/jcbevns.poseidon.feralhosting.com/public_html/links/Movies/"
 tvPath = "www/jcbevns.poseidon.feralhosting.com/public_html/TV Series/"
 musicPath = "www/jcbevns.poseidon.feralhosting.com/public_html/Music/"

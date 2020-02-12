@@ -36,9 +36,6 @@ usernameLogin = driver.find_element_by_id('login')
 usernameLogin.click()
 print("Logged in successfully...")
 
-#define paths for movies / tv
-moviePath = "www/jcbevns.poseidon.feralhosting.com/public_html/links/movies/"
-tvPath = "www/jcbevns.poseidon.feralhosting.com/public_html/tv/"
 
 #define flags for paths
 folderFlag = str(sys.argv[1])
@@ -63,10 +60,10 @@ parser.add_argument("magnet",help="magnet link")
 args = parser.parse_args()
 
 savePath = driver.find_element_by_name('savepath')
-moviePath = "www/jcbevns.poseidon.feralhosting.com/public_html/links/Movies/"
-tvPath = "www/jcbevns.poseidon.feralhosting.com/public_html/TV Series/"
-musicPath = "www/jcbevns.poseidon.feralhosting.com/public_html/Music/"
-tempPath = "www/jcbevns.poseidon.feralhosting.com/public_html/Temporary/"
+moviePath = "/www/jcbevns.poseidon.feralhosting.com/public_html/links/Movies/"
+tvPath = "/www/jcbevns.poseidon.feralhosting.com/public_html/links/TV Series/"
+musicPath = "/www/jcbevns.poseidon.feralhosting.com/public_html/links/Music/"
+tempPath = "/www/jcbevns.poseidon.feralhosting.com/public_html/links/Temporary/"
 
 
 if args.folder == 'movies':
