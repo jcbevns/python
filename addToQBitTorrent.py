@@ -5,6 +5,7 @@ from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
 import sys
 import os
 import argparse
@@ -23,7 +24,9 @@ except IndexError:
 
 
 #Fetch webpage and login via direct link
-driver = webdriver.Firefox()
+options = FirefoxOptions()
+options.add_argument("--headless")
+driver = webdriver.Firefox(options=options)
 driver.get('http://jcbevns.poseidon.feralhosting.com:8080/')
 
 usernameLogin = driver.find_element_by_id('username')
