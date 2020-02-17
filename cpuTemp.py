@@ -16,3 +16,4 @@ def publish_message(topic, message):
 
 temp = measure_temp()
 publish_message("/pi/temp/", temp)
+
