@@ -5,6 +5,7 @@ import qrcode
 from PIL import Image
 import sys
 
+#add email address needed to link via QR code
 emailAddress = 'jevans@oculyze.de'
 
 qr = qrcode.QRCode(
