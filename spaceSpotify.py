@@ -13,7 +13,7 @@ sp.trace=False
 
 username = '1230966705'
 client_id = '0d632b21e74c4f86b991255a4623d528'
-client_secret = '64ec1b6290e74a88a3c9895bd1851166'
+#client_secret = '64ec1b6290e74a88a3c9895bd1851166'
 redirect_uri = 'https://example.com/callback/'
 scope = 'user-read-private user-read-playback-state user-modify-playback-state'
 
