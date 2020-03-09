@@ -12,9 +12,9 @@ sp = spotipy.Spotify(client_credentials_manager=SpotifyClientCredentials())
 sp.trace=False
 
 username = '1230966705'
-client_id = '0d632b21e74c4f86b991255a4623d528'
-#client_secret = '64ec1b6290e74a88a3c9895bd1851166'
-redirect_uri = 'https://example.com/callback/'
+client_id = 'ad7816b31ce8423fbc05646f14bfce49'
+client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+redirect_uri = 'http://example.com/callback/'
 scope = 'user-read-private user-read-playback-state user-modify-playback-state'
 
 #spaceTargetID = "a9c10be65d783a01393445c2aba85a1782c11402"
@@ -48,5 +48,5 @@ print(res)
 #spaceMaxVolume = sp.volume(volume_percent, device_id=spaceTargetID)
 
 #spacestart()
-spaceMaxVolume()
+sp.Volume(100)
 

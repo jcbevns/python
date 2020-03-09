@@ -7,8 +7,10 @@ import spotipy.util as util
 import time 
 from spotipy.oauth2 import SpotifyClientCredentials
 
-#spaceTargetID = "a9c10be65d783a01393445c2aba85a1782c11402"
 username = '1230966705'
+client_id = 'ad7816b31ce8423fbc05646f14bfce49'
+client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+redirect_uri = 'http://example.com/callback/'
 spaceTargetID = "5a0e6f83bdf11ea662e3228c4417264cc137b768"
 
 #created spotipy opbject with permissions

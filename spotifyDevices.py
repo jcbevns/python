@@ -6,13 +6,13 @@ import spotipy.util as util
 import webbrowser
 import requests
 from json.decoder import JSONDecodeError
+from spotipy.oauth2 import SpotifyClientCredentials
 
 username = '1230966705'
 client_id = 'ad7816b31ce8423fbc05646f14bfce49'
-client_secret = '461d8ae9476f4947bbeb6063458173f6'
-redirect_uri = 'http://example.com/callback/'
+client_secret = os.environ['SPOTIPY_CLIENT_SECRET']
+redirect_uri = os.environ['SPOTIPY_REDIRECT_URI']
 scope = 'user-read-private user-read-playback-state user-modify-playback-state'
-
 
 #https://open.spotify.com/user/1230966705?si=iKWQzMcuQW-_QJJIMbjsPQ
 
@@ -29,28 +29,36 @@ sp = spotipy.Spotify(auth=token)
 devices = sp.devices()
 deviceID = devices['devices'][0]['id']
 
+
 # Current track information
+trackInfo = sp.current_user_playing_track()
 track = sp.current_user_playing_track()
 artist = track['item']['artists'][0]['name']
 track = track['item']['name']
+trackUri = trackInfo['context']['uri']
+trackProgress = trackInfo['progress_ms']
+
+print("URI = ", trackUri)
+print("Progress_ms = ", trackProgress)
 
 if artist != "":
-    print("Currently playing " + artist + " - " + track)
+    print("Currently playing = " + artist + " - " + track)
 
 # User information
 #user = sp.current_user()
 #displayName = user['display_name']
 #followers = user['followers']['total']
 
-#print(devices)
+print("Device ID                             - Active? -Vol -Type - Name")
 ids = []
 for x in range(len(devices))	:
 	for arrayNum in devices['devices']:
 		print(arrayNum['id'],arrayNum['is_active'],arrayNum['volume_percent'],arrayNum['type'],arrayNum['name'])
 
 		
-
-
+#sp = spotipy.Spotify(client_credentials_manager=SpotifyOAuth,scope=scope)
+sp.volume(100)
+print("Volume @ 100%")
 
 
 
